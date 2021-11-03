@@ -55,3 +55,10 @@ class NbApi:
         request = requests.get(url=ALL_CURRENCIES + '/' + cur_id)
         validate(instance=request.json(), schema=const_for_api.schema_currency)
         return [request.status_code, request, request.json()]
+
+    @staticmethod
+    def custom_get_statistics_for_currency(cur_id,custom_parameter=''):
+        request = requests.get(url=CURRENT_DYMANICS + str(
+            cur_id) + custom_parameter)
+        return request.status_code
+
