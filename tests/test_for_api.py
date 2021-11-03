@@ -85,3 +85,18 @@ def test_get_currency_statistics_without_cur_id(cur_id,start_date,end_date):
 
 
 
+@pytest.mark.parametrize('cur_id', ['510'])
+def test_witout_parameters(cur_id):
+    assert NbApi.custom_get_statistics_for_currency(cur_id, custom_parameter='' == 400
+
+
+@pytest.mark.parametrize('cur_id', ['510'])
+@pytest.mark.parametrize('end_date', ['2021-12-03'])
+def test_witout_parameter_start_date(cur_id, end_date):
+    assert NbApi.custom_get_statistics_for_currency(cur_id, custom_parameter="?endDate=" + str(end_date)) == 400
+
+
+@pytest.mark.parametrize('cur_id', ['510'])
+@pytest.mark.parametrize('start_date', ['2021-11-02'])
+def test_witout_parameter_end_date(cur_id, start_date):
+    assert NbApi.custom_get_statistics_for_currency(cur_id, custom_parameter="?startDate=" + str(start_date)) == 400
