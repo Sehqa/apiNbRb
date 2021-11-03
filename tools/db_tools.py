@@ -25,7 +25,7 @@ class DbTools:
         conn.close()
         return random.choice(result_list)
 
-    # добавляем одну забись валют
+    # добавляем одну запись валют
     @staticmethod
     def add_currency_to_db(currency):
         conn = cx_Oracle.connect(CONNECT)
