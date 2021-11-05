@@ -6,11 +6,6 @@ from currency_classes.currency import Currency
 from nb_api import NbApi
 import random
 
-''' colnames = curs.description
-        for i in range(0, len(colnames)):
-            print(colnames[i][0])
-'''
-
 
 class DbTools:
 
