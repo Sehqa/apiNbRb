@@ -1,29 +1,33 @@
 class Currency:
+    cur_id = ''
+    cur_parent_id = ''
+    cur_code = ''
+    cur_abbreviation = ''
+    cur_name = ''
+    cur_name_bel = ''
+    cur_name_eng = ''
+    cur_quot_name = ''
+    cur_quot_name_bel = ''
+    cur_quot_name_eng = ''
+    cur_name_multi = ''
+    cur_name_bel_multi = ''
+    cur_name_eng_multi = ''
+    cur_scale = ''
+    cur_periodicity = ''
+    cur_date_start = ''
+    cur_date_end = ''
+
     def __init__(self, kwargs):
-        self.cur_id = kwargs.get('Cur_ID')
-        self.cur_parent_id = kwargs.get('Cur_ParentID')
-        self.cur_code = kwargs.get('Cur_Code')
-        self.cur_abbreviation = kwargs.get('Cur_Abbreviation')
-        self.cur_name = kwargs.get('Cur_Name')
-        self.cur_name_bel = kwargs.get('Cur_Name_Bel')
-        self.cur_name_eng = kwargs.get('Cur_Name_Eng')
-        self.cur_quot_name = kwargs.get('Cur_QuotName')
-        self.cur_quot_name_bel = kwargs.get('Cur_QuotName_Bel')
-        self.cur_quot_name_eng = kwargs.get('Cur_QuotName_Eng')
-        self.cur_name_multi = kwargs.get('Cur_NameMulti')
-        self.cur_scale = kwargs.get('Cur_Scale')
-        self.cur_periodicity = kwargs.get('Cur_Periodicity')
-        self.cur_date_start = kwargs.get('Cur_DateStart')
-        self.cur_date_end = kwargs.get('Cur_DateEnd')
-        if (kwargs.get('Cur_NameMulti') == ''):
-            self.cur_name_multi = 'emptyvalue'
-        else:
-            self.cur_name_multi = kwargs.get('Cur_NameMulti')
-        if (kwargs.get('Cur_Name_BelMulti') == ''):
-            self.cur_name_bel_multi = 'emptyvalue'
-        else:
-            self.cur_name_bel_multi = kwargs.get('Cur_Name_BelMulti')
-        if (kwargs.get('Cur_Name_EngMulti') == ''):
-            self.cur_name_eng_multi = 'emptyvalue'
-        else:
-            self.cur_name_eng_multi = kwargs.get('Cur_Name_EngMulti')
+        kw_dict = kwargs
+        update_dict = {}
+        list_keys = list(kw_dict.keys())
+        iter_for_dict = 0
+        for i in list(name for name in Currency.__dict__ if not name.startswith('__')):
+            update_dict[i] = kw_dict[list_keys[iter_for_dict]]
+            iter_for_dict = iter_for_dict + 1
+        for i in update_dict.keys():
+            if update_dict[i] == '':
+                update_dict[i] = 'emptyvalue'
+        self.__dict__.update(update_dict)
+
+
