@@ -11,13 +11,6 @@ import json
 class NbApi:
 
     @staticmethod
-    def get_json_schema(file):
-        with open(str(file), 'r') as f:
-            data = json.loads(f.read())
-        return data
-
-
-    @staticmethod
     def get_all_statistics():
         start_date = date.today() - timedelta(days=count_days_current_month)
         end_date = date.today()
