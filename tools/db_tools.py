@@ -130,7 +130,5 @@ class DbTools:
         conn = cx_Oracle.connect(CONNECT)
         curs = conn.cursor()
         sql_req = ('SELECT * FROM CURRENCY_STATISTICS')
-        for row in curs.execute(sql_req):
-            print(row[0], row[1], row[3])
         conn.close()
         return result_list
