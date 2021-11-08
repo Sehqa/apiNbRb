@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "Cur_ID": {
+            "type": "number"
+        },
+        "Date": {
+            "type": "string"
+        },
+        "Cur_OfficialRate": {
+            "type": "number"
+        }
+    }
+}
