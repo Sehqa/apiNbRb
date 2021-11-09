@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "Cur_ID": {"type": "number"},
+        "Cur_ParentID": {"type": "number"},
+        "Cur_Code": {"type": "string"},
+        "Cur_Abbreviation": {"type": "string"},
+        "Cur_Name": {"type": "string"},
+        "Cur_Name_Bel": {"type": "string"},
+        "Cur_Name_Eng": {"type": "string"},
+        "Cur_QuotName": {"type": "string"},
+        "Cur_QuotName_Bel": {"type": "string"},
+        "Cur_QuotName_Eng": {"type": "string"},
+        "Cur_NameMulti": {"type": "string"},
+        "Cur_Name_BelMulti": {"type": "string"},
+        "Cur_Name_EngMulti": {"type": "string"},
+        "Cur_Scale": {"type": "number"},
+        "Cur_Periodicity": {"type": "number"},
+        "Cur_DateStart": {"type": "string"},
+        "Cur_DateEnd": {"type": "string"}
+    }
+}
+
