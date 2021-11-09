@@ -25,6 +25,8 @@ class DbTools:
     def add_currency_to_db(currency):
         conn = cx_Oracle.connect(CONNECT)
         curs = conn.cursor()
+
+        #возможно параметры стоило поместить внутрь {}, не знаю как лучше
         sql_req = (
                 'INSERT INTO CURRENCY (CUR_ID,CUR_PARENT_ID,CUR_CODE,CUR_ABBREVIATION,CUR_NAME,CUR_NAME_BEL,CUR_NAME_ENG,CUR_QUOT_NAME,CUR_QUOT_NAME_BEL,CUR_QUOT_NAME_ENG,CUR_NAME_MULTI,CUR_NAME_BEL_MULTI,CUR_NAME_ENG_MULTI,CUR_SCALE,CUR_PERIODICITY,CUR_DATE_START,CUR_DATE_END) VALUES (\'' + '{}' + '\',\'' + '{}' + '\',\'' +
                 '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\',\'' + '{}' + '\')').format(
